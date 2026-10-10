@@ -1,0 +1,12 @@
+name: Hello World
+# trigger option (manual trigger)
+on: workflow_dispatch
+# on a workflow to perform certain operation we use job.
+jobs:
+  hello:
+    # to run this job provide a agent on runner environment.
+    runs-on: ubuntu-22.04
+    # lines..
+    steps:
+      - name: Hellow step
+        run: echo " welcome to Github actions"
