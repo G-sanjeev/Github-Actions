@@ -8,10 +8,7 @@ on:
       - development
       # regular expressions of branch names
       - 'release/**'
-      # ignore the branches as well
-    branches-ignore:
-      # exclude other branches
-      - dev
+      # ignore the branches as well branches-ignore:
   pull_request:
   # we can specify the types: opened and so o
     types: 
