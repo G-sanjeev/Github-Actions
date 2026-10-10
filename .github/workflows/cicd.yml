@@ -3,14 +3,24 @@ name: Hello World
 on: workflow_dispatch
 # on a workflow to perform certain operation we use job.
 jobs:
-  hello:
+  Build:
     # to run this job provide a agent on runner environment.
     runs-on: ubuntu-22.04
     # lines..
     steps:
       # multiple shell commands 
-      - name: Hello step
+      - name: Build stage
         run: |
-          echo " welcome to Github actions"
-          echo " second line "
+          echo " build stage in progress"
+          echo " build stage completed "
+  Test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: test stage
+        run : echo "test stage"
+  Deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: deploy stage
+        run: echo "deploy stage "
         
