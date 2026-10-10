@@ -15,11 +15,14 @@ jobs:
           echo " build stage completed "
   Test:
     runs-on: ubuntu-22.04
+    # needs to run the job in sequentaily way
+    needs: Build
     steps:
       - name: test stage
         run : echo "test stage"
   Deploy:
     runs-on: ubuntu-22.04
+    needs: Test
     steps:
       - name: deploy stage
         run: echo "deploy stage "
