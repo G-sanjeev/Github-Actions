@@ -8,5 +8,9 @@ jobs:
     runs-on: ubuntu-22.04
     # lines..
     steps:
-      - name: Hellow step
-        run: echo " welcome to Github actions"
+      # multiple shell commands 
+      - name: Hello step
+        run: |
+        echo " welcome to Github actions"
+        echo " second line " 
+        
