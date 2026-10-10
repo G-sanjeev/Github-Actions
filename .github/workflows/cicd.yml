@@ -1,6 +1,11 @@
 name: Hello World
-# trigger option (manual trigger)
-on: workflow_dispatch
+# trigger option (manual trigger like workflow_dispatch) | it can on push or pr 
+on: 
+  # it can also be written in ["push","pull_request"]
+  push:
+    branches:
+      - main
+      # multiple branch names
 # on a workflow to perform certain operation we use job.
 jobs:
   Build:
@@ -20,10 +25,4 @@ jobs:
     steps:
       - name: test stage
         run : echo "test stage"
-  Deploy:
-    runs-on: ubuntu-22.04
-    needs: Test
-    steps:
-      - name: deploy stage
-        run: echo "deploy stage "
         
