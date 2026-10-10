@@ -11,6 +11,6 @@ jobs:
       # multiple shell commands 
       - name: Hello step
         run: |
-        echo " welcome to Github actions"
-        echo " second line " 
+          echo " welcome to Github actions"
+          echo " second line "
         
