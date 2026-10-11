@@ -12,12 +12,12 @@ on:
       - development
 jobs:
   Build:
-      runs-on: ubuntu-22.04
-      steps: 
-        - name : build stage
-          run : | 
-            echo "build stage"
-        - name : checkout the code
-          run : actions/checkout@v4
-        - name : print index.html
-          run : cat index.html
+    runs-on: ubuntu-22.04
+    steps: 
+      - name : build stage
+        run : | 
+          echo "build stage"
+      - name : checkout the code
+        run : actions/checkout@v4
+      - name : print index.html
+        run : cat index.html
