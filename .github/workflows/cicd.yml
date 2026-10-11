@@ -10,8 +10,8 @@ on:
     branches:
       - main
       - development
-  jobs:
-    Build:
+jobs:
+  Build:
       runs-on: ubuntu-22.04
       steps: 
         - name : build stage
