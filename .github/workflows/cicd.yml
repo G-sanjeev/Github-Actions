@@ -1,35 +1,23 @@
-name: Hello World
-# trigger option (manual trigger like workflow_dispatch) | it can on push or pr 
-on: 
-  # it can also be written in ["push","pull_request"]
+name: Github Action
+on:
   push:
-    branches:
-      - main
-      - development
-  pull_request:
     branches: 
       - main
       - development
-      # multiple branch names
-# on a workflow to perform certain operation we use job.
-jobs:
-  Build:
-    # to run this job provide a agent on runner environment.
-    runs-on: ubuntu-22.04
-    # lines..
-    steps:
-      # multiple shell commands 
-      - name: Build stage
-        run: |
-          echo " build stage in progress"
-          echo " ${{vars.MY_NAME}}"
-          echo "${{secrets.JENKINS_PASSWORD}}"
-          echo " build stage completed "
-  Test:
-    runs-on: ubuntu-22.04
-    # needs to run the job in sequentaily way
-    needs: Build
-    steps:
-      - name: test stage
-        run : echo "test stage"
-        
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+      - development
+  jobs:
+    Build:
+      runs-on: ubuntu-22.04
+      steps: 
+        - name : build stage
+          run : | 
+            echo "build stage"
+        - name : checkout the code
+          run : actions/checkout@v4
+        - name : print index.html
+          run : cat index.html
