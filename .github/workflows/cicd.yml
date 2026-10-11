@@ -22,6 +22,8 @@ jobs:
       - name: Build stage
         run: |
           echo " build stage in progress"
+          echo " ${{vars.MY_NAME}}"
+          echo "${{secrets.JENKINS_PASSWORD}}"
           echo " build stage completed "
   Test:
     runs-on: ubuntu-22.04
